@@ -1,12 +1,9 @@
-import Link from 'next/link';
-import styled from 'styled-components';
+import { Link as Scroll } from 'react-scroll';
 // --------------- Function ---------------
-export default function Navigation({ name, href = '/' }: { name: string; href: string }) {
+export default function Navigation({ name }: { name: string }) {
   return (
-    <Link href={href}>
-      <a className='navLink'>{name}</a>
-    </Link>
+    <Scroll to={name} smooth={true} duration={500} offset={-150} className='navLink'>
+      {name}
+    </Scroll>
   );
 }
-
-// --------------- Styled ---------------

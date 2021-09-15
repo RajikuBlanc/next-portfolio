@@ -1,3 +1,6 @@
+/* eslint-disable @next/next/link-passhref */
+import Link from 'next/link';
+import { Link as Scroll } from 'react-scroll';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { Medias } from 'styles/Media';
@@ -7,11 +10,13 @@ import { Medias } from 'styles/Media';
 export default function Header() {
   return (
     <HeaderStyled>
-      <Logo_h1>BLANC</Logo_h1>
+      <Link href='/'>
+        <Logo_a>BLANC</Logo_a>
+      </Link>
       <NavStyle>
-        <Navigation name='about' href='/#about' />
-        <Navigation name='products' href='/#products' />
-        <Navigation name='contact' href='/#contact' />
+        <Navigation name='about' />
+        <Navigation name='products' />
+        <Navigation name='contact' />
       </NavStyle>
     </HeaderStyled>
   );
@@ -25,9 +30,11 @@ const HeaderStyled = styled.header`
   background-color: var(--primary);
   padding: 0 2.5rem;
 `;
-const Logo_h1 = styled.h1`
+const Logo_a = styled.a`
   color: var(--white);
   font-size: 2.2rem;
+  font-weight: bold;
+  cursor: pointer;
 `;
 
 const NavStyle = styled.nav`
@@ -38,6 +45,7 @@ const NavStyle = styled.nav`
     color: var(--white);
     text-transform: uppercase;
     font-size: 1.5rem;
+    cursor: pointer;
   }
   ${Medias.tab} {
     display: none;

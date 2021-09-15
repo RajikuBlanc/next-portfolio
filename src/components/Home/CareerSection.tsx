@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Medias } from '../../styles/Media';
 import { ContainerStyle } from '../common/Container';
 // --------------- Function ---------------
 import CarrerText from './CarrerText';
@@ -31,5 +32,8 @@ export default function CareerSection() {
 const Carrer_section = styled.section`
   width: 100%;
   background-color: var(--primary);
-  padding: 9rem 5rem;
+  padding: 9rem 3rem;
+  ${Medias.custom(480)} {
+    padding: 3rem 2.5rem;
+  }
 `;

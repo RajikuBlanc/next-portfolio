@@ -12,6 +12,7 @@ export default function AboutSection() {
     '昔から手先が器用で、物作りが好きでした。自分で一からものを作って完成した時の達成感は何度でも味わいたくなります。また、自分に知識をつけることがとても好きです。自分が成長しているのを感じた時は努力してよかったと次の学習意欲の向上につながります。プログラミング学習を継続し続けられているのも、この学習意欲の向上と自分自身の成長がとても大きいと思っています。';
   return (
     <About_section>
+      <div id='about'></div>
       {/*  @ts-ignore */}
       <SectionTitleRight>about</SectionTitleRight>
       <ContainerStyle>
@@ -71,7 +72,7 @@ const AboutInfo_div = styled.div`
     flex-direction: column;
     gap: 5rem;
   }
-  ${Medias.sp} {
+  ${Medias.custom(480)} {
     gap: 2.5rem;
   }
 `;
@@ -96,7 +97,7 @@ const TextBox_div = styled.div`
   li {
     font-size: 1.8rem;
     margin-left: 5rem;
-    ${Medias.sp} {
+    ${Medias.custom(480)} {
       margin-left: 2rem;
       font-size: 1.2rem;
     }
@@ -111,7 +112,7 @@ const Description_p = styled.p`
   margin-left: 5rem;
   color: var(--primary);
   line-height: 1.5;
-  ${Medias.sp} {
+  ${Medias.custom(480)} {
     margin-left: 2rem;
     font-size: 1.2rem;
   }
