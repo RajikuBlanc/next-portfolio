@@ -19,6 +19,7 @@ export const SectionTitleRight = styled(SectionTitle)`
   font-size: 15rem;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
   color: var(--subprimary);
   z-index: 10;
   position: absolute;
@@ -36,5 +37,5 @@ export const SectionTitleRight = styled(SectionTitle)`
   }
 `;
 export const SectionTitleLeft = styled(SectionTitleRight)`
-  left: 0;
+  left: 5rem;
 `;

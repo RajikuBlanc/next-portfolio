@@ -1,8 +1,24 @@
+import { GetStaticProps } from 'next';
 import { MdKeyboardArrowUp } from 'react-icons/md';
 import styled from 'styled-components';
 import AboutSection from '../components/Home/AboutSection';
 import CareerSection from '../components/Home/CareerSection';
-export default function Home() {
+import ProductsSection from '../components/Home/ProductsSection';
+import { client } from '../libs/client';
+import { CMSProductList, CMSProductProps } from '../types/product';
+// --------------- SSG ---------------
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const data: CMSProductList = await client.get({ endpoint: 'products' });
+  return {
+    props: {
+      products: data.contents,
+    },
+  };
+};
+
+// --------------- Function ---------------
+export default function Home({ products }: { products: CMSProductProps }) {
   const returnTop = () => {
     window.scrollTo({
       top: 0,
@@ -17,7 +33,8 @@ export default function Home() {
       <CareerSection />
 
       {/* products section */}
-      <h2>Products</h2>
+      <ProductsSection productList={products} />
+
       <TopButton_div onClick={returnTop}>
         <MdKeyboardArrowUp color={'#ffffff'} size={30} />
       </TopButton_div>
