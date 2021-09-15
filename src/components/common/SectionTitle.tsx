@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Medias } from '../../styles/Media';
 
 export default function SectionTitle({
   children,
@@ -23,6 +24,16 @@ export const SectionTitleRight = styled(SectionTitle)`
   position: absolute;
   top: 0;
   right: 5rem;
+  ${Medias.tab} {
+    font-size: 10rem;
+    right: 2.5rem;
+  }
+  ${Medias.custom(425)} {
+    font-size: 6rem;
+  }
+  ${Medias.sp} {
+    font-size: 5rem;
+  }
 `;
 export const SectionTitleLeft = styled(SectionTitleRight)`
   left: 0;

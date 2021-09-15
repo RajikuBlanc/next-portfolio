@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Navigation from './Navigation';
+import { Medias } from 'styles/Media';
 // --------------- SSG ---------------
 
 // --------------- Function ---------------
@@ -37,5 +38,8 @@ const NavStyle = styled.nav`
     color: var(--white);
     text-transform: uppercase;
     font-size: 1.5rem;
+  }
+  ${Medias.tab} {
+    display: none;
   }
 `;

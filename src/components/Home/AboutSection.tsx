@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import { Medias } from '../../styles/Media';
 import Ptext from '../common/Ptext';
 import { SectionTitleRight } from '../common/SectionTitle';
 import { ContainerStyle } from 'components/common/Container';
@@ -50,6 +51,14 @@ const About_section = styled.section`
   .Ptext {
     margin-bottom: 0.5rem;
   }
+  ${Medias.tab} {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 12rem;
+  }
+  ${Medias.custom(425)} {
+    padding-top: 6rem;
+  }
 `;
 
 const AboutInfo_div = styled.div`
@@ -58,10 +67,19 @@ const AboutInfo_div = styled.div`
   align-items: center;
   justify-content: center;
   gap: 8rem;
+  ${Medias.custom(1240)} {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  ${Medias.sp} {
+    gap: 2.5rem;
+  }
 `;
 const AboutImg_figure = styled.figure`
   min-width: 600px;
-  height: 600px;
+  ${Medias.tab} {
+    min-width: 100%;
+  }
 `;
 
 const TextBox_div = styled.div`
@@ -78,6 +96,10 @@ const TextBox_div = styled.div`
   li {
     font-size: 1.8rem;
     margin-left: 5rem;
+    ${Medias.sp} {
+      margin-left: 2rem;
+      font-size: 1.2rem;
+    }
   }
   li span {
     color: var(--primary);
@@ -89,4 +111,8 @@ const Description_p = styled.p`
   margin-left: 5rem;
   color: var(--primary);
   line-height: 1.5;
+  ${Medias.sp} {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+  }
 `;
