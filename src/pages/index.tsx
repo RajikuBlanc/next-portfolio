@@ -1,7 +1,13 @@
+import AboutSection from '../components/Home/AboutSection';
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      {/* about section */}
+      <AboutSection />
+      {/* career section */}
+      <h2>Career</h2>
+      {/* products section */}
+      <h2>Products</h2>
+    </>
   );
 }

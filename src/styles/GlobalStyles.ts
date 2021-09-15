@@ -7,18 +7,18 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   :root{
-    --primary: #707070;
-    --subprimary: #DFDFDF;
-    --blue: #007ACC;
+    --primary: #354458;
+    --subprimary: #6e7886;
     --white : #ffffff;
     --black: #000000;
+    --bg: #f2f2f2;
   }
   html{
     font-size: 10px;
     height: 100vh;
   }
   body{
-    background-color: var(--white);
+    background-color: var(--bg);
     font-family: 'Roboto Mono';
     color: var(--black);
     letter-spacing: 0.1em;
