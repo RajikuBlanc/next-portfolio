@@ -26,16 +26,16 @@ export const SectionTitleRight = styled(SectionTitle)`
   top: 0;
   right: 5rem;
   ${Medias.tab} {
-    font-size: 10rem;
+    font-size: 6rem;
     right: 2.5rem;
   }
-  ${Medias.custom(425)} {
-    font-size: 6rem;
-  }
-  ${Medias.sp} {
-    font-size: 5rem;
+  ${Medias.custom(480)} {
+    font-size: 3rem;
   }
 `;
 export const SectionTitleLeft = styled(SectionTitleRight)`
   left: 5rem;
+  ${Medias.tab} {
+    left: 2.5rem;
+  }
 `;

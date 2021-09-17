@@ -6,7 +6,7 @@ export default function Ptext({ text }: { text: string }) {
 }
 
 // --------------- Styled ---------------
-const Text_p = styled.p`
+export const Text_p = styled.p`
   font-size: 1.8rem;
   color: var(--primary);
   ${Medias.custom(480)} {
