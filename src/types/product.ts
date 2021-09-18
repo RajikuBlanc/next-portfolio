@@ -7,6 +7,9 @@ export interface CMSProduct {
   commitment: string;
   hardship: string;
   images: ImagesData[];
+  thumbnail: {
+    url: string;
+  };
 }
 export type CMSProductProps = CMSProduct[];
 
@@ -21,7 +24,7 @@ export interface SkillData {
 export interface ImagesData {
   id: string;
   alt: string;
-  image: {
+  sliderimage: {
     url: string;
   };
 }

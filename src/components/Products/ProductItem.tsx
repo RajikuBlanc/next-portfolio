@@ -18,19 +18,12 @@ export default function ProductItem({
             <PostItem_li key={product.id}>
               {/* LeftBox */}
               <LeftBox_div>
-                {product.images.map((imageItem, index) => {
-                  if (index === 0) {
-                    return (
-                      <Image
-                        key={index}
-                        src={imageItem.image.url}
-                        alt={imageItem.alt}
-                        width={600}
-                        height={400}
-                      ></Image>
-                    );
-                  }
-                })}
+                <Image
+                  src={product.thumbnail.url}
+                  alt='サムネイル画像'
+                  width={600}
+                  height={400}
+                ></Image>
               </LeftBox_div>
               {/* RightBox */}
               <RightBox_div>
@@ -56,19 +49,12 @@ export default function ProductItem({
             <PostItemLeft_li key={product.id}>
               {/* LeftBox */}
               <LeftBox_div>
-                {product.images.map((imageItem, index) => {
-                  if (index === 0) {
-                    return (
-                      <Image
-                        key={index}
-                        src={imageItem.image.url}
-                        alt={imageItem.alt}
-                        width={600}
-                        height={400}
-                      ></Image>
-                    );
-                  }
-                })}
+                <Image
+                  src={product.thumbnail.url}
+                  alt='サムネイル画像'
+                  width={600}
+                  height={400}
+                ></Image>
               </LeftBox_div>
               {/* RightBox */}
               <RightBox_div>

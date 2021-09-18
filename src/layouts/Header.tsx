@@ -29,6 +29,7 @@ const HeaderStyled = styled.header`
   height: 60px;
   background-color: var(--primary);
   padding: 0 2.5rem;
+  width: 100%;
 `;
 const Logo_a = styled.a`
   color: var(--white);
