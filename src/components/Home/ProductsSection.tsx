@@ -2,19 +2,17 @@ import styled from 'styled-components';
 import { Medias } from '../../styles/Media';
 import { CMSProductProps } from '../../types/product';
 import ProductItem from '../Products/ProductItem';
-import Container from '../common/Container';
 import { SectionTitleLeft } from '../common/SectionTitle';
 
 export default function ProductsSection({ productList }: { productList: CMSProductProps }) {
   return (
     <Products_section>
+      <div id='products'></div>
       {/*  @ts-ignore */}
       <SectionTitleLeft>products</SectionTitleLeft>
-      <Container>
-        <ProductList_ul>
-          <ProductItem productData={productList} />
-        </ProductList_ul>
-      </Container>
+      <ProductList_ul>
+        <ProductItem productData={productList} />
+      </ProductList_ul>
     </Products_section>
   );
 }
@@ -25,4 +23,12 @@ const Products_section = styled.section`
     padding-top: 15rem;
   }
 `;
-const ProductList_ul = styled.ul``;
+const ProductList_ul = styled.ul`
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+`;

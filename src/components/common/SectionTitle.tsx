@@ -16,7 +16,7 @@ export default function SectionTitle({
 }
 // --------------- Styled ---------------
 export const SectionTitleRight = styled(SectionTitle)`
-  font-size: 15rem;
+  font-size: 10rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -25,8 +25,10 @@ export const SectionTitleRight = styled(SectionTitle)`
   position: absolute;
   top: 0;
   right: 5rem;
-  ${Medias.tab} {
+  ${Medias.custom(1240)} {
     font-size: 6rem;
+  }
+  ${Medias.tab} {
     right: 2.5rem;
   }
   ${Medias.custom(480)} {

@@ -28,11 +28,13 @@ export default function Home({ products }: { products: CMSProductProps }) {
   return (
     <>
       {/* about section */}
+      <div id='about'></div>
       <AboutSection />
       {/* career section */}
       <CareerSection />
 
       {/* products section */}
+      <div id='products'></div>
       <ProductsSection productList={products} />
 
       <TopButton_div onClick={returnTop}>
