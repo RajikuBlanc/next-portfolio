@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/link-passhref */
 import Link from 'next/link';
-import { Link as Scroll } from 'react-scroll';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { Medias } from 'styles/Media';
