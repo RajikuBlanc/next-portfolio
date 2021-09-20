@@ -23,7 +23,7 @@ export const SectionTitleRight = styled(SectionTitle)`
   color: var(--subprimary);
   z-index: 10;
   position: absolute;
-  top: 0;
+  top: 2rem;
   right: 5rem;
   ${Medias.custom(1240)} {
     font-size: 6rem;

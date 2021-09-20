@@ -11,3 +11,6 @@ export const ContainerStyle = styled(Container)`
   margin: 0 auto;
   width: 100%;
 `;
+export const MinContainerStyle = styled(ContainerStyle)`
+  max-width: 1440px;
+`;

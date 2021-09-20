@@ -13,9 +13,9 @@ export default function Header() {
         <Logo_a>BLANC</Logo_a>
       </Link>
       <NavStyle>
-        <Navigation name='about' />
-        <Navigation name='products' />
-        <Navigation name='contact' />
+        <Navigation name='about' href='/#about' />
+        <Navigation name='products' href='/#products' />
+        <Navigation name='contact' href='/#contact' />
       </NavStyle>
     </HeaderStyled>
   );

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import { Medias } from '../../styles/Media';
 import { CMSProductProps } from '../../types/product';
 import Ptext, { Text_p } from '../common/Ptext';
 import ViewMoreButton from '../common/ViewMoreButton';
@@ -87,6 +88,9 @@ const PostItem_li = styled.li`
   justify-content: space-between;
   gap: 4rem;
   height: 450px;
+  ${Medias.tab} {
+    height: 300px;
+  }
 `;
 const PostItemLeft_li = styled(PostItem_li)`
   flex-direction: row-reverse;
@@ -119,10 +123,19 @@ const NumberPrimary_p = styled.p`
   font-size: 10rem;
   color: var(--primary);
   background-color: var(--white);
+  ${Medias.tab} {
+    width: 90px;
+    height: 90px;
+    font-size: 6rem;
+    border: 3px solid var(--primary);
+  }
 `;
 
 const Number_p = styled(NumberPrimary_p)`
   color: var(--white);
   background-color: var(--primary);
   border: 5px solid var(--subprimary);
+  ${Medias.tab} {
+    border: 3px solid var(--subprimary);
+  }
 `;

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
 import Link from 'next/link';
 import styled from 'styled-components';
+import { Medias } from '../../styles/Media';
 // --------------- Function ---------------
 export default function ViewMoreButton({ link }: { link: string }) {
   return (
@@ -34,5 +35,8 @@ const LinkText_a = styled.a`
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    ${Medias.tab} {
+      width: 400px;
+    }
   }
 `;

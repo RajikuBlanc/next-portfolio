@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
-import Contact from './Contact';
+import ContactSection from './ContactSection';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -11,7 +11,8 @@ export default function Layout({ children }: PropsWithChildren<any>) {
       <GlobalStyles />
       <Header />
       <main>{children}</main>
-      <Contact />
+      <div id='contact'></div>
+      <ContactSection />
       <Footer />
     </>
   );

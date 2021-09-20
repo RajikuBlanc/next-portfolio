@@ -1,9 +1,9 @@
-import { Link as Scroll } from 'react-scroll';
+import Link from 'next/link';
 // --------------- Function ---------------
-export default function Navigation({ name }: { name: string }) {
+export default function Navigation({ name, href }: { name: string; href: string }) {
   return (
-    <Scroll to={name} smooth={true} duration={500} offset={0} className='navLink'>
-      {name}
-    </Scroll>
+    <Link href={href}>
+      <a className='navLink'>{name}</a>
+    </Link>
   );
 }
