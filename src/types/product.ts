@@ -10,6 +10,8 @@ export interface CMSProduct {
   thumbnail: {
     url: string;
   };
+  github: string;
+  url: string;
 }
 export type CMSProductProps = CMSProduct[];
 

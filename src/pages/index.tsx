@@ -57,4 +57,9 @@ const TopButton_div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.2);
+    background-color: var(--subprimary);
+  }
 `;

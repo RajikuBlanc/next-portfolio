@@ -27,8 +27,11 @@ const ProductList_ul = styled.ul`
   max-width: 1500px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 5rem;
   display: flex;
   flex-direction: column;
   gap: 10rem;
+  ${Medias.tab} {
+    padding: 0 2.5rem;
+  }
 `;
