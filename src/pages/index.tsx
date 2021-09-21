@@ -6,6 +6,7 @@ import CareerSection from '../components/Home/CareerSection';
 import ProductsSection from '../components/Home/ProductsSection';
 import { client } from '../libs/client';
 import { CMSProductList, CMSProductProps } from '../types/product';
+import { Medias } from 'styles/Media';
 // --------------- SSG ---------------
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
@@ -61,5 +62,9 @@ const TopButton_div = styled.div`
   &:hover {
     transform: scale(1.2);
     background-color: var(--subprimary);
+  }
+  ${Medias.sp} {
+    right: 2rem;
+    bottom: 2rem;
   }
 `;

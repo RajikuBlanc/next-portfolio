@@ -121,7 +121,6 @@ export default function ContactSection() {
 }
 // --------------- Styled ---------------
 const Contact_section = styled.section`
-  margin-top: 10rem;
   padding: 0 2.5rem;
   width: 100%;
   background-color: var(--primary);

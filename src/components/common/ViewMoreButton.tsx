@@ -27,7 +27,6 @@ const LinkText_a = styled.a`
   display: block;
   position: relative;
   transition: all 1s;
-
   &::after {
     position: absolute;
     right: -6rem;
@@ -49,5 +48,8 @@ const LinkText_a = styled.a`
     &::after {
       right: -8rem;
     }
+  }
+  ${Medias.sp} {
+    font-size: 3.5rem;
   }
 `;

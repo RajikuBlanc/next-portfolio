@@ -36,6 +36,7 @@ export default function ProductItem({
                 <Ptext text={product.title} />
                 <Ptext text={`制作期間 : ${product.date}`} />
                 <ul>
+                  <Ptext text='使用技術 :' />
                   {product.skill.map((skill) => {
                     return (
                       <SkillText_li as='li' key={skill.id}>
@@ -73,6 +74,7 @@ export default function ProductItem({
                 <Ptext text={product.title} />
                 <Ptext text={`制作期間 : ${product.date}`} />
                 <ul>
+                  <Ptext text='使用技術 :' />
                   {product.skill.map((skill) => {
                     return (
                       <SkillText_li as='li' key={skill.id}>
@@ -100,13 +102,20 @@ const PostItem_li = styled.li`
   display: flex;
   justify-content: space-between;
   gap: 4rem;
-  height: 450px;
-  ${Medias.tab} {
-    height: 300px;
+  ${Medias.custom(1024)} {
+    flex-direction: column;
+    align-items: center;
+    gap: 7rem;
+  }
+  ${Medias.sp} {
+    gap: 3rem;
   }
 `;
 const PostItemLeft_li = styled(PostItem_li)`
   flex-direction: row-reverse;
+  ${Medias.custom(1024)} {
+    flex-direction: column;
+  }
 `;
 const SkillText_li = styled(Text_p)`
   margin-left: 2rem;
@@ -115,13 +124,16 @@ const SkillText_li = styled(Text_p)`
 const LeftBox_div = styled.div`
   max-width: 600px;
   width: 100%;
+  ${Medias.custom(1024)} {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 const ImageLink_a = styled.a`
   display: block;
   position: relative;
   cursor: pointer;
-  width: 600px;
-  height: 400px;
   img {
     transition: all 1s;
   }
@@ -149,6 +161,10 @@ const RightBox_div = styled.div`
   width: 100%;
   position: relative;
   padding-left: 2rem;
+  ${Medias.custom(1024)} {
+    padding-left: 0;
+    height: 250px;
+  }
 `;
 const NumberPrimary_a = styled.p`
   position: absolute;
