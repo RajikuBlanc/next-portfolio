@@ -35,6 +35,7 @@ export default function ProductDetail({ products }: { products: CMSProduct }) {
           return <li key={index}>{skill.name}</li>;
         })}
       </ul>
+      <Image src={products.thumbnail.url} alt='サムネイル' width={800} height={520}></Image>
       {/* 技術選定理由 */}
       <p>{products.skillreason}</p>
       {/* こだわり */}

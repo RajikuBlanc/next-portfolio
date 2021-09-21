@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
 import ContactSection from './ContactSection';
@@ -8,6 +9,9 @@ import Header from './Header';
 export default function Layout({ children }: PropsWithChildren<any>) {
   return (
     <>
+      <Head>
+        <title>Blanc My Portfolio</title>
+      </Head>
       <GlobalStyles />
       <Header />
       <main>{children}</main>
