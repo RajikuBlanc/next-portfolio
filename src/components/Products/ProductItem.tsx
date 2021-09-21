@@ -123,7 +123,7 @@ const ImageLink_a = styled.a`
   width: 600px;
   height: 400px;
   img {
-    transition: all 0.5s;
+    transition: all 1s;
   }
   &::after {
     content: '';
@@ -132,7 +132,7 @@ const ImageLink_a = styled.a`
     position: absolute;
     top: 0;
     left: 0;
-    transition: props 0.5s;
+    transition: all 1s;
   }
   &:hover {
     img {
@@ -165,7 +165,7 @@ const NumberPrimary_a = styled.p`
   color: var(--primary);
   background-color: var(--white);
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 1s;
   ${Medias.tab} {
     width: 90px;
     height: 90px;

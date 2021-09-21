@@ -59,12 +59,10 @@ export default function ContactSection() {
 
     axios({
       method: 'POST',
-      url: 'https://formspree.io/f/xleazlqj',
+      url: process.env.NEXT_PUBLIC_FORMSPREE_URL,
       data: inputs,
     })
-      .then(() => {
-        handleServerResponse(true, '送信に成功しました');
-      })
+      .then(() => {})
       .catch(() => {
         handleServerResponse(false, '送信に失敗しました');
       });
@@ -109,14 +107,13 @@ export default function ContactSection() {
               {!status.submitting ? (!status.submitted ? '送信' : '送信しました') : '送信中'}
             </ButtonStyle>
             {status.info.error && <div className='error'>Error: {status.info.msg}</div>}
-            {!status.info.error && status.info.msg && <p className='succes'>{status.info.msg}</p>}
           </FormRight_div>
         </FormStyle>
         <Link href='https://twitter.com/Whale_ELAHW00'>
-          <TwiiterBlock target='_blank' rel='noopener'>
+          <TwitterBlock_a target='_blank' rel='noopener'>
             <FaTwitter size={30} color={'#ffffff'} />
             <p>DMでもお問い合わせ可能です</p>
-          </TwiiterBlock>
+          </TwitterBlock_a>
         </Link>
       </MinContainerStyle>
     </Contact_section>
@@ -138,7 +135,6 @@ const Contact_section = styled.section`
     padding-top: 25rem;
     padding-bottom: 10rem;
   }
-  .succes,
   .error {
     font-size: 1.8rem;
     color: var(--white);
@@ -225,14 +221,34 @@ const ButtonStyle = styled.button`
   letter-spacing: 0.2em;
   margin-top: 8rem;
   color: var(--primary);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
   ${Medias.custom(480)} {
     height: 40px;
     max-width: 200px;
     font-size: 1.4rem;
   }
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transition: all 1s;
+  }
+  &:hover {
+    &::before {
+      top: 0;
+    }
+  }
 `;
-const TwiiterBlock = styled.a`
+const TwitterBlock_a = styled.a`
   display: block;
+  max-width: 300px;
+  width: 100%;
   cursor: pointer;
   margin-top: 5rem;
   color: var(--white);
@@ -242,5 +258,24 @@ const TwiiterBlock = styled.a`
   gap: 2rem;
   ${Medias.tab} {
     font-size: 1.2rem;
+  }
+  p {
+    position: relative;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--white);
+      position: absolute;
+      opacity: 0;
+      transition: all 0.6s;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 `;

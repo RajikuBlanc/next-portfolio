@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Medias } from '../../styles/Media';
+
 // --------------- Function ---------------
 export default function ViewMoreButton({ link }: { link: string }) {
   return (
@@ -12,6 +13,7 @@ export default function ViewMoreButton({ link }: { link: string }) {
     </ViewMoreButton_div>
   );
 }
+
 // --------------- Styled ---------------
 const ViewMoreButton_div = styled.div`
   position: absolute;
@@ -24,6 +26,8 @@ const LinkText_a = styled.a`
   cursor: pointer;
   display: block;
   position: relative;
+  transition: all 1s;
+
   &::after {
     position: absolute;
     right: -6rem;
@@ -35,8 +39,15 @@ const LinkText_a = styled.a`
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 1s;
     ${Medias.tab} {
       width: 400px;
+    }
+  }
+  &:hover {
+    opacity: 0.7;
+    &::after {
+      right: -8rem;
     }
   }
 `;
