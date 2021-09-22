@@ -13,6 +13,7 @@ export default function Layout({ children }: PropsWithChildren<any>) {
         <title>Blanc My Portfolio</title>
       </Head>
       <GlobalStyles />
+
       <Header />
       <main>{children}</main>
       <div id='contact'></div>
