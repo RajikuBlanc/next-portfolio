@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
-import GlobalStyles from '../styles/GlobalStyles';
+import GlobalStyles from '../../styles/GlobalStyles';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 import Header from './Header';

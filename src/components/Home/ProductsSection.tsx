@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Medias } from '../../styles/Media';
 import { CMSProductProps } from '../../types/product';
-import ProductItem from '../Products/ProductItem';
 import { SectionTitleLeft } from '../common/SectionTitle';
+import ProductItem from './ProductItem';
 
 export default function ProductsSection({ productList }: { productList: CMSProductProps }) {
   return (

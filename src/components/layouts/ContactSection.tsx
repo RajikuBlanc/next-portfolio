@@ -4,9 +4,9 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaTwitter } from 'react-icons/fa';
 import styled from 'styled-components';
-import { MinContainerStyle } from '../components/common/Container';
-import { SectionTitleRight } from '../components/common/SectionTitle';
-import { Medias } from '../styles/Media';
+import { Medias } from '../../styles/Media';
+import { MinContainerStyle } from '../common/Container';
+import { SectionTitleRight } from '../common/SectionTitle';
 // --------------- Function ---------------
 export default function ContactSection() {
   const [status, setStatus] = useState({
@@ -171,6 +171,7 @@ const FormStyle = styled.form`
     font-size: 1.8rem;
     padding: 1rem 1rem 0 0;
     border-bottom: 1px solid var(--white);
+    outline: none;
   }
   ${Medias.custom(480)} {
     flex-direction: column;
