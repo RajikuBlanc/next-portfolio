@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app';
-import { useEffect } from 'react';
 import Layout from '../components/layouts/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {

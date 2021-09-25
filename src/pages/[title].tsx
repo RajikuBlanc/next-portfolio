@@ -2,9 +2,11 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { BiLinkExternal } from 'react-icons/bi';
 import styled from 'styled-components';
+import ImageModal from '../components/Products/ImageModal';
 import ProductsTitle from '../components/Products/ProductsTitle';
 import { Medias } from '../styles/Media';
 import { client } from 'libs/client';
@@ -31,6 +33,11 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
 // --------------- Function ---------------
 export default function ProductDetail({ products }: { products: CMSProduct }) {
+  const [openModal, setOpenModal] = useState<string>('');
+  const onOpenModal = (url: string) => {
+    setOpenModal(url);
+  };
+
   return (
     <ProductDetailStyle>
       {/* タイトル */}
@@ -81,19 +88,28 @@ export default function ProductDetail({ products }: { products: CMSProduct }) {
       <ProductsTitle title='苦労したこと' size={2} />
       <TextBox_p>{products.hardship}</TextBox_p>
       {/* 画像スライダー */}
-      <Slider_div>
+      <ImageList_ul>
         {products.images.map((images, index) => {
           return (
-            <Image
-              key={index}
-              src={images.sliderimage.url}
-              alt={images.alt}
-              width={350}
-              height={500}
-            ></Image>
+            <li key={index}>
+              <figure>
+                <Image
+                  src={images.sliderimage.url}
+                  alt={images.alt}
+                  width={350}
+                  height={500}
+                  onClick={() => {
+                    onOpenModal(images.sliderimage.url);
+                  }}
+                ></Image>
+              </figure>
+              {images.sliderimage.url === openModal && (
+                <ImageModal closeModal={setOpenModal} imgUrl={images.sliderimage.url} />
+              )}
+            </li>
           );
         })}
-      </Slider_div>
+      </ImageList_ul>
 
       {/* back home */}
       <Link href='/'>
@@ -189,7 +205,15 @@ const HomeButton_a = styled.a`
     font-size: 1.5rem;
   }
 `;
-const Slider_div = styled.div`
+
+const ImageList_ul = styled.ul`
   display: flex;
-  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 6rem;
+  figure {
+    width: 200px;
+  }
 `;
