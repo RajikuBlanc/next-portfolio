@@ -17,7 +17,7 @@ export default function ProductItem({
         const num = index + 1;
         if (num % 2 === 0) {
           return (
-            <PostItem_li key={product.id}>
+            <PostItem_li key={product.id} data-aos='fade-right'>
               {/* LeftBox */}
               <LeftBox_div>
                 <Link href={`/${product.id}`}>
@@ -55,7 +55,7 @@ export default function ProductItem({
           );
         } else {
           return (
-            <PostItemLeft_li key={product.id}>
+            <PostItemLeft_li key={product.id} data-aos='fade-left'>
               {/* LeftBox */}
               <LeftBox_div>
                 <Link href={`/${product.id}`}>

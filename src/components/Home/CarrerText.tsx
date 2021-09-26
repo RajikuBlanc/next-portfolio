@@ -3,7 +3,7 @@ import { Medias } from 'styles/Media';
 // --------------- Function ---------------
 export default function CarrerText({ date, description }: { date: string; description: string }) {
   return (
-    <CarrerTextStyle>
+    <CarrerTextStyle data-aos='fade-right'>
       <Date_p>{date}</Date_p>
       <Description_p>{description}</Description_p>
     </CarrerTextStyle>

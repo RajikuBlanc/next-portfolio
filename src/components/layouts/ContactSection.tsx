@@ -69,17 +69,17 @@ export default function ContactSection() {
   };
 
   return (
-    <Contact_section>
+    <Contact_section data-aos='zoom-in' data-aos-offset='400'>
       <MinContainerStyle className='contact_container'>
         {/*  @ts-ignore */}
         <SectionTitleRight className='contact_title'>Contact</SectionTitleRight>
         <FormStyle onSubmit={handleOnSubmit}>
           <FormLeft_div>
-            <p>
+            <p data-aos='fade-up' data-aos-offset='200'>
               <label htmlFor='name'>Name</label>
               <input id='name' type='text' onChange={handleOnChange} required value={inputs.name} />
             </p>
-            <p>
+            <p data-aos='fade-up' data-aos-offset='200'>
               <label htmlFor='email'>Email</label>
               <input
                 id='email'
@@ -92,7 +92,7 @@ export default function ContactSection() {
             </p>
           </FormLeft_div>
           <FormRight_div>
-            <div>
+            <div data-aos='fade-right' data-aos-offset='200'>
               <label htmlFor='message'>Message</label>
               <textarea
                 id='message'
@@ -103,14 +103,24 @@ export default function ContactSection() {
                 rows={8}
               />
             </div>
-            <ButtonStyle type='submit' disabled={status.submitting}>
+            <ButtonStyle
+              type='submit'
+              disabled={status.submitting}
+              data-aos='fade-up'
+              data-aos-offset='200'
+            >
               {!status.submitting ? (!status.submitted ? '送信' : '送信しました') : '送信中'}
             </ButtonStyle>
             {status.info.error && <div className='error'>Error: {status.info.msg}</div>}
           </FormRight_div>
         </FormStyle>
         <Link href='https://twitter.com/Whale_ELAHW00'>
-          <TwitterBlock_a target='_blank' rel='noopener'>
+          <TwitterBlock_a
+            target='_blank'
+            rel='noopener'
+            data-aos='fade-right'
+            data-aos-offset='200'
+          >
             <FaTwitter size={30} color={'#ffffff'} />
             <p>DMでもお問い合わせ可能です</p>
           </TwitterBlock_a>
@@ -121,7 +131,7 @@ export default function ContactSection() {
 }
 // --------------- Styled ---------------
 const Contact_section = styled.section`
-  padding: 0 2.5rem;
+  padding: 0 5rem;
   width: 100%;
   background-color: var(--primary);
   color: var(--white);
@@ -140,14 +150,21 @@ const Contact_section = styled.section`
     text-align: center;
     margin-top: 2rem;
   }
-  ${Medias.custom(480)} {
+  ${Medias.custom(600)} {
+    padding: 0 2.5rem;
+
     .contact_container {
-      padding-top: 8rem;
+      padding-top: 15rem;
       padding-bottom: 5rem;
     }
     .succes,
     .error {
       font-size: 1.2rem;
+    }
+  }
+  ${Medias.custom(480)} {
+    .contact_container {
+      padding-top: 8rem;
     }
   }
 `;
@@ -173,7 +190,7 @@ const FormStyle = styled.form`
     border-bottom: 1px solid var(--white);
     outline: none;
   }
-  ${Medias.custom(480)} {
+  ${Medias.custom(600)} {
     flex-direction: column;
     gap: 3rem;
     label {
@@ -195,14 +212,14 @@ const FormLeft_div = styled.div`
     width: 35%;
     gap: 3rem;
   }
-  ${Medias.custom(480)} {
+  ${Medias.custom(600)} {
     width: 100%;
     gap: 3rem;
   }
 `;
 const FormRight_div = styled.div`
   width: 60%;
-  ${Medias.custom(480)} {
+  ${Medias.custom(600)} {
     width: 100%;
   }
 `;
@@ -224,7 +241,7 @@ const ButtonStyle = styled.button`
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  ${Medias.custom(480)} {
+  ${Medias.custom(600)} {
     height: 40px;
     max-width: 200px;
     font-size: 1.4rem;

@@ -11,13 +11,14 @@ export default function AboutSection() {
   const description =
     '昔から手先が器用で、物作りが好きでした。自分で一からものを作って完成した時の達成感は何度でも味わいたくなります。また、自分に知識をつけることがとても好きです。自分が成長しているのを感じた時は努力してよかったと次の学習意欲の向上につながります。プログラミング学習を継続し続けられているのも、この学習意欲の向上と自分自身の成長がとても大きいと思っています。';
   return (
-    <About_section>
+    <About_section data-aos='fade-right'>
       {/*  @ts-ignore */}
       <SectionTitleRight>about</SectionTitleRight>
       <ContainerStyle>
         <AboutInfo_div>
           <AboutImg_figure>
             <Image
+              data-aos='fade-in'
               src='/images/about-img.jpg'
               alt='プロフィール画像'
               width={600}

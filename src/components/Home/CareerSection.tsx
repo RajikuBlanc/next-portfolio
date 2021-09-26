@@ -5,7 +5,7 @@ import { ContainerStyle } from '../common/Container';
 import CarrerText from './CarrerText';
 export default function CareerSection() {
   return (
-    <Carrer_section>
+    <Carrer_section data-aos='fade-up'>
       <ContainerStyle>
         <CarrerText date='2016/03' description='追手門学院大学心理学部心理学科 入学' />
         <CarrerText date='2020/04' description='追手門学院大学心理学部心理学科 卒業' />

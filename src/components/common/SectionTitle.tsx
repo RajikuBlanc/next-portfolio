@@ -10,7 +10,9 @@ export default function SectionTitle({
 }) {
   return (
     <>
-      <h2 className={className}>{children}</h2>
+      <h2 data-aos='fade-up' className={className}>
+        {children}
+      </h2>
     </>
   );
 }

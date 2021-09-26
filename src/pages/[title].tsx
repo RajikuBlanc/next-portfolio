@@ -45,22 +45,32 @@ export default function ProductDetail({ products }: { products: CMSProduct }) {
       <InfoBox_div>
         <Box_div>
           {/* 制作期間 */}
-          <p>制作期間 : {products.date}</p>
+          <p data-aos='fade-right'>制作期間 : {products.date}</p>
           {/* 使用技術 */}
-          <p>使用技術 :</p>
+          <p data-aos='fade-right'>使用技術 :</p>
           <ul>
             {products.skill.map((skill, index) => {
-              return <li key={index}>{skill.name}</li>;
+              return (
+                <li key={index} data-aos='fade-right' data-aos-duration='1500'>
+                  {skill.name}
+                </li>
+              );
             })}
           </ul>
         </Box_div>
         <Box_div>
-          <Image src={products.thumbnail.url} alt='サムネイル' width={800} height={520}></Image>
+          <Image
+            src={products.thumbnail.url}
+            alt='サムネイル'
+            width={800}
+            height={520}
+            data-aos='zoom-in'
+          ></Image>
           <UrlBox_div>
             {/* url */}
             {products.url && (
               <Link href={products.url}>
-                <a target='_blank'>
+                <a target='_blank' data-aos='fade-up'>
                   <BiLinkExternal size={30} color='#6e7886' />
                 </a>
               </Link>
@@ -68,7 +78,7 @@ export default function ProductDetail({ products }: { products: CMSProduct }) {
             {/* github */}
             {products.github && (
               <Link href={products.github}>
-                <a target='_blank'>
+                <a target='_blank' data-aos='fade-up'>
                   <AiFillGithub size={30} color='#6e7886' />
                 </a>
               </Link>
@@ -79,16 +89,16 @@ export default function ProductDetail({ products }: { products: CMSProduct }) {
       {/* 技術選定理由 */}
       <ProductsTitle title='技術選定理由' size={2} />
 
-      <TextBox_p>{products.skillreason}</TextBox_p>
+      <TextBox_p data-aos='fade-up'>{products.skillreason}</TextBox_p>
       {/* こだわり */}
       <ProductsTitle title='こだわり' size={2} />
 
-      <TextBox_p>{products.commitment}</TextBox_p>
+      <TextBox_p data-aos='fade-up'>{products.commitment}</TextBox_p>
       {/* 苦労したこと */}
       <ProductsTitle title='苦労したこと' size={2} />
-      <TextBox_p>{products.hardship}</TextBox_p>
+      <TextBox_p data-aos='fade-up'>{products.hardship}</TextBox_p>
       {/* 画像スライダー */}
-      <ImageList_ul>
+      <ImageList_ul data-aos='fade-up'>
         {products.images.map((images, index) => {
           return (
             <li key={index}>
@@ -148,7 +158,7 @@ const InfoBox_div = styled.div`
     margin-left: 2rem;
     margin-bottom: 0;
   }
-  ${Medias.custom(450)} {
+  ${Medias.custom(600)} {
     flex-direction: column;
     gap: 3rem;
     p,
@@ -159,7 +169,8 @@ const InfoBox_div = styled.div`
 `;
 const Box_div = styled.div`
   width: 40%;
-  ${Medias.custom(450)} {
+  max-width: 800px;
+  ${Medias.custom(600)} {
     width: 100%;
   }
 `;
@@ -178,7 +189,7 @@ const TextBox_p = styled.p`
   line-height: 1.8;
   border: 1px solid var(--subprimary);
   margin-bottom: 3rem;
-  ${Medias.custom(450)} {
+  ${Medias.custom(600)} {
     font-size: 1.2rem;
     padding: 1rem 2rem;
   }
@@ -201,7 +212,7 @@ const HomeButton_a = styled.a`
   cursor: pointer;
   margin-top: 2rem;
   border-radius: 5px;
-  ${Medias.custom(450)} {
+  ${Medias.custom(600)} {
     font-size: 1.5rem;
   }
 `;

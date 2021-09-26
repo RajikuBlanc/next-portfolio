@@ -3,7 +3,7 @@ import { Medias } from '../../styles/Media';
 // --------------- Function ---------------
 export default function ProductsTitle({ title, size }: { title: string; size: number }) {
   return (
-    <ProductsTitleStyle className='productsTitle' size={size}>
+    <ProductsTitleStyle className='productsTitle' size={size} data-aos='fade-up'>
       {title}
     </ProductsTitleStyle>
   );
